@@ -1,0 +1,12 @@
+[Unit]
+Description=This service move downloaded files to related category directory
+
+[Service]
+User=wasi
+WorkingDirectory=/home/wasi/system_projects/file_manager
+Environment="PATH=/home/wasi/system_projects/file_manager/venv/bin"
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/wasi/system_projects/file_manager/venv/bin/python file_manager.py
+
+[Install]
+WantedBy=multi-user.target
